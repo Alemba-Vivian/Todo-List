@@ -1,0 +1,17 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "Creating a functional todo list web application that manages your tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "author": "vivian alemba",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
