@@ -1,1 +1,2 @@
-alert("hello vivian alemba");
+import './styles/style.css';
+// alert("hello vivian alemba");
