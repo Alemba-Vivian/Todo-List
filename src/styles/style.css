@@ -21,30 +21,109 @@ body{
     grid-template-columns: 1fr 4fr;
     height: 100vh;
 }
+
+/* styling header section */
+
 .header-container{
-    /* background-color: var(--header--backgroun-clr); */
     background: url('../Assets/pexels-polina-kovaleva-5717411.jpg');
     background-size: cover;
     background-position: center;
     padding: 40px;
-    height: 30vh;
     color: white;
 }
+
+/* styling sidebar section */
+
 .sidebar-container{
     background-color: var(--sidebar--background-clr);
     padding: 40px;
     color: white;
+   
 
 }
 .grid-row-span{
     grid-row: span 2;
 }
 
+.sidebar-content{
+    padding-bottom: 30px;
+    color: black;
+}
+.my-name{
+    padding-bottom: 5px;
+}
+
+
+/* working with the user details */
+.user-profile{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border: 1px solid orange;
+    border-radius: 10px;
+   
+}
+.projects{
+    padding-top: 40px;
+    color: black;
+}
+.my-projects{
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+#project>li{
+    padding: 10px;
+}
+
 .grid-colum-span{
 
 }
+
+/* styling main section */
+
 .main-container{
     background-color: var(--main--background-clr);
     padding: 40px;
-    height: 70vh;
+}
+
+.task-container{
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.todos-container{
+   
+}
+#todos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    list-style-type: none;
+    gap: 10px;
+
+}
+span{
+    color: #d67229;
+
+}
+#todos>li{
+    padding: 10px;
+    background-color: lightblue;
+    border-radius: 20px;
+
+}
+#todos>li:nth-child(even){
+    background-color: lightpink;
+    
+}
+
+#btn-new-task{
+    padding: 10px 20px 10px 20px;
+    background-color: #d67229;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.0rem;
+
 }
