@@ -69,6 +69,14 @@ body{
     padding-top: 40px;
     color: black;
 }
+#btn-new-project{padding: 10px 20px 10px 20px;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.0rem;
+
+}
 .my-projects{
     padding-top: 40px;
     padding-bottom: 30px;
@@ -126,4 +134,66 @@ span{
     border: none;
     font-size: 1.0rem;
 
+}
+#add-sign{
+    margin-left: 10px;
+}
+
+
+/* styling the form */
+.todos-form{
+    display: none;
+    border: 1px solid lightgrey;
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.form-controls{
+ 
+}
+input[type="text"]{
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+   
+}
+
+.my-priority{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.priority{
+    padding-bottom: 10px;
+}
+.my-buttons{
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+ 
+}
+
+#btn-close{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #d67229;
+    color: white;
+    margin-right: 20px;
+}
+#btn-add{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #d67229;
+    color: white;
+}
+#plus-sign{
+    margin-right: 5px;
+}
+
+button:hover{
+    cursor: pointer;
 }

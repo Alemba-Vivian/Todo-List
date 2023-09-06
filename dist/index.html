@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/7692/7692809.png">
+    <script src="https://kit.fontawesome.com/6a6bdefd0d.js" crossorigin="anonymous"></script>
     <title>Todo List</title>
 </head>
 <body>
@@ -41,7 +42,7 @@
                     <li>Development</li>
                     <li>Research</li>
                 </ul>
-                <button>New Projects</button>
+                <button id="btn-new-project">New Projects <i id="add-sign" class="fa-solid fa-plus"></i></button>
             </div>
         </div>
 
@@ -66,7 +67,47 @@
             </div>
 
             <div class="task-container">
-                <button id="btn-new-task">New Task</button>
+                <button id="btn-new-task">New Task <i id="add-sign" class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="todos-form">
+                <form action="" method="">
+                    <div class="form-control">
+                        <input type="text" placeholder="Task Title" id="title" name="title">
+                    </div>
+                    <div class="form-control">
+                        <input type="text" placeholder="Description" id="description" name="description">
+                    </div>
+                    <div class="form-control">
+                        <input type="date" placeholder="dueDate" id="dueDate" name="dueDate">
+                    </div>
+
+                    <div class="priority">
+                        <h5 class="my-priority">Priority</h5>
+                    <div class="form-control">
+                        <input type="radio" id="important" name="priority" placeholder="Important">
+                        <label for="important">Important</label>
+                    </div>
+                    <div class="form-control">
+                        <input type="radio" id="medium" name="priority" placeholder="Medium">
+                        <label for="Medium">Medium</label>
+                    </div>
+                    <div class="form-control">
+                        <input type="radio" id="less" name="priority" placeholder="less">
+                        <label for="less">Less</label>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <textarea name="notes" id="notes" cols="20" rows="5">Add notes</textarea>
+                </div>
+
+                <div class="form-control my-buttons">
+                    <button id="btn-close"><i class="fa-solid fa-xmark"></i></button>
+                    <button type="submit" id="btn-add"><i id="plus-sign" class="fa-solid fa-plus"></i>Add</button>
+                </div>
+
+                </form>
+
             </div>
 
             <div class="todos-container">
