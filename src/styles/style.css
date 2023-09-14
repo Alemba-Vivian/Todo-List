@@ -81,8 +81,20 @@ body{
     padding-top: 40px;
     padding-bottom: 30px;
 }
+.project-buttons{
+    padding-top: 40px;
+}
+#project{
+
+}
+
 #project>li{
     padding: 10px;
+    list-style-type: none;
+}
+#project>li:hover{
+    cursor: pointer;
+    background-color: orange;
 }
 
 .grid-colum-span{

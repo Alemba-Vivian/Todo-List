@@ -3,10 +3,15 @@ import { taskTitle, taskDescription, taskDueDate, taskPriority, taskNotes } from
 import { listItems, form } from "../Layout/DOM";
 
 
+
+
 //working with the priority functions
+let taskPriorityValue;
 function displayPriority(){
    for(let i =0; i < taskPriority.length; i++){
         if(taskPriority[i].checked){
+            taskPriorityValue = taskPriority[i].value;
+            console.log(taskPriorityValue = taskPriority[i].value);
             console.log(taskPriority[i].value);
         }
     }
@@ -52,10 +57,12 @@ function addTodos(){
 
  const task =todos();
 
+ displayPriority();
+
  task.title = taskTitle.value;
  task.description = taskDescription.value;
  task.dueDate = taskDueDate.value;
- task.priority = displayPriority();
+ task.priority = taskPriorityValue;
  task.notes = taskNotes.value;
 
 

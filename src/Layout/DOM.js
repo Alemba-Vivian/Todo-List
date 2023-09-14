@@ -7,6 +7,12 @@ const taskNotes = document.querySelector('#notes');
 
 //<UL> LIST ITEM
 const listItems = document.querySelector('#todos');
+const projectItems = document.querySelector('#projects');
+
+//<LI> PROJECTS iTEM
+const personal = document.querySelector('#personal-project');
+const home = document.querySelector('#home-project');
+const work = document.querySelector('#work-project');
 
 //FORM 
 const form = document.querySelector('#formSubmit');
@@ -32,8 +38,9 @@ function closeForm(){
 
 export{
     showForm, closeForm,
-    listItems,
+    listItems,projectItems,
     form, taskTitle,
     taskDescription, 
-    taskDueDate, taskPriority, taskNotes
+    taskDueDate, taskPriority, taskNotes,
+    personal, home, work
     };

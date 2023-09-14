@@ -1,10 +1,12 @@
+import { formSubmit } from "../Modules/addTodo"
+
 const todos=(title, description, dueDate, priority,notes)=>{
     const getDate=()=>{
 
     }
 
     const getodos=()=>{
-        return `${title} ${description} ${dueDate} ${priority} ${notes}`;
+        return formSubmit();
     }
 
     return{
