@@ -22,29 +22,33 @@ function addProjects(){
         projectList.innerHTML =`${element.name}`;
 
         projectItems.appendChild(projectList);
-        console.log(projectItems.appendChild(projectList));
+        console.log(myProjects[projectList]);
 
-        console.log(myProjects);
+      
         return myProjects[projectList];
 
     });
     
 }
 
+
 //submit button
 function submitProjects(){
     projectForm.addEventListener('submit', (e)=>{
         e.preventDefault();
-        if(projectTitle.value === "" || projectTitle.value === null || projectTitle.value === undefined)
-        {
+        if(projectTitle.value === "" || projectTitle.value === null){
             alert("Ensure you fill all the inputs values");
         }else{
+          
             alert("Form is submitted successfully");
-            addProjects();
+             addProjects();
+           
         }
-        projectTitle.value = "";
+        projectTitle.value ="";
+       
     })
 
 }
 
-export{submitProjects};
+export {submitProjects}
+

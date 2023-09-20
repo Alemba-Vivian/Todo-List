@@ -1,31 +1,20 @@
 import { projectItems } from "../Layout/DOM";
 import { home, personal, work } from "../Layout/DOM";
 import { todos } from "./todos";
+import { formSubmit } from "../Modules/todoFormSubmit";
 
 
 
 function mydefaultProjects(){
-    const todos1= todos()
-   if(home ){
+      if(home){
+
+        home.addEventListener('click',()=>{
+        const container = document.querySelector('#todos');
+        container.replaceChildren();
+        formSubmit();
+       } );  
   
-    home.addEventListener('click',()=>{
-        // todos1.getodos;
-        // const container = document.querySelector('.todos-container');
-        // container.replaceChild('#todos');
-
-       
-
-        //console.log(todos.getodos);
-
-    } );  
-  
-   }else if(work){
-    home.addEventListener('click', todos1.getodos); 
-
-   }else if(personal){
-    home.addEventListener('click', todos1.getodos); 
-
-   }
+      }
 }
 
 export{mydefaultProjects};
