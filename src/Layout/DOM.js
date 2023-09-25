@@ -8,6 +8,9 @@ const taskNotes = document.querySelector('#notes');
 //PROJECT INPUT
 const projectTitle =document.querySelector('#project-title');
 
+//DEFAULT PROJECTS
+const myDefaultProjects = document.getElementsByClassName('default-projects');
+
 //<UL> LIST ITEM
 const listItems = document.querySelector('#todos');
 const projectItems = document.querySelector('#project');
@@ -62,5 +65,6 @@ export{
     taskDescription, 
     taskDueDate, taskPriority, taskNotes,
     personal, home, work,
-    projectTitle
+    projectTitle,
+    myDefaultProjects
     };

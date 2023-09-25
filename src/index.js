@@ -8,7 +8,7 @@ import { mydefaultProjects } from './Components/default';
 import { submitProjects } from './Modules/addProject';
 
 // console.log(formSubmit);
-// formSubmit();
-// mydefaultProjects();
+formSubmit();
 submitProjects();
+mydefaultProjects();
 

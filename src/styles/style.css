@@ -241,3 +241,38 @@ button:hover{
     color: white;
 
 }
+
+/* Todos */
+#edit{
+    margin-left: 10px;
+    padding-top: 20px;
+}
+
+#trash{
+    color: red;
+    margin-left: 10px;
+    padding-top: 20px;
+ 
+    /* padding-left: 100px; */
+}
+#check{
+    padding-top: 20px;
+    color: green;
+    margin-left: 10px;
+  
+    /* float: right; */
+
+}
+#edit:hover{
+    cursor: pointer;
+}
+#check:hover{
+    cursor: pointer;
+}
+#trash:hover{
+    cursor: pointer;
+}
+#completed{
+    padding-top: 10px;
+    /* color: lightblue; */
+}

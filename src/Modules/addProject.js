@@ -17,15 +17,19 @@ function addProjects(){
     myProjects.forEach((element, index)=>{
         myProjects = [];
 
+
         const projectList = document.createElement('li');
-        // projectList.id ="project-list";
+        projectList.classList.add("default-projects");
         projectList.innerHTML =`${element.name}`;
 
         projectItems.appendChild(projectList);
-        console.log(myProjects[projectList]);
+
+    
+            console.log(myProjects[projectList]);
 
       
-        return myProjects[projectList];
+            return myProjects[projectList];
+      
 
     });
     
