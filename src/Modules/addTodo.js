@@ -75,7 +75,8 @@ myTodos = [];
    //adding eventlistener to the complete icon
    completeIcon.addEventListener('click', ()=>{
     console.log("i am done");
-    completed.style.display ='block';
+    // completed.style.display ='block';
+    list.classList.toggle('strike');
      
    });
 
@@ -84,11 +85,11 @@ myTodos = [];
    listItems.removeChild(list);
    })
 
-  list.innerHTML =`<span>Task Title:</span> ${element.title} <br>
-                   <span>Task Description:</span> ${element.description} <br>
-                   <span>Task DueDate:</span> ${element.dueDate} <br>
-                   <span>Task Priority:</span> ${element.priority} <br>
-                   <span>Task Notes:</span> ${element.notes} <br>`;
+  list.innerHTML =`Title:<span class="done-todos">${element.title}</span><br>
+                   Description:<span class="done-todos">${element.description}</span><br>
+                   DueDate: <span class="done-todos">${element.dueDate}</span><br>
+                   Priority: <span class="done-todos">${element.priority}</span><br>
+                   Notes: <span class="done-todos">${element.notes}</span><br>`;
 
              
   list.appendChild(completed);

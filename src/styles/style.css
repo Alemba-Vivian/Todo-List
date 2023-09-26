@@ -121,7 +121,8 @@ body{
 
 }
 span{
-    color: #d67229;
+    color: #d67229;  
+    margin-left: 10px;
 
 }
 #todos>li{
@@ -276,3 +277,8 @@ button:hover{
     padding-top: 10px;
     /* color: lightblue; */
 }
+
+.strike .done-todos{
+    text-decoration: line-through;
+}
+
