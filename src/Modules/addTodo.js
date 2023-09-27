@@ -48,7 +48,8 @@ myTodos = [];
    //creating the edit icon to edit each todos
    const editIcon = document.createElement('i');
    editIcon.className ='fa-regular fa-pen-to-square';
-   editIcon.id ='edit'
+   editIcon.id ='edit';
+   editIcon.classList.add('edit-me');
 
   //creating the trash can to delete each todos
    const trashIcon = document.createElement('i');
@@ -69,8 +70,23 @@ myTodos = [];
    
    //adding eventlistener to the edit con
    editIcon.addEventListener('click', ()=>{
+  // Since the selector ".edit" is dynamic, listen to all elements
+  document.querySelector('*').addEventListener('click', (e) => {
+    // Return, if the element has not the class "edit"
+    if (e.target.id !== 'edit') return 
+    // Set attribute to the paragraph
+     e.target.parentElement.setAttribute('contenteditable', 'true'); 
+    // focus the paragraph
+     e.target.parentElement.focus(); 
+     });
     
+     
    })
+
+ 
+
+
+  
 
    //adding eventlistener to the complete icon
    completeIcon.addEventListener('click', ()=>{
@@ -85,11 +101,35 @@ myTodos = [];
    listItems.removeChild(list);
    })
 
-  list.innerHTML =`Title:<span class="done-todos">${element.title}</span><br>
-                   Description:<span class="done-todos">${element.description}</span><br>
-                   DueDate: <span class="done-todos">${element.dueDate}</span><br>
-                   Priority: <span class="done-todos">${element.priority}</span><br>
-                   Notes: <span class="done-todos">${element.notes}</span><br>`;
+   //CREATING P TAG FOR THE INPUTS RECEIVED FROM THE USER
+   const titleHTML = document.createElement('p');
+   titleHTML.id ='title';
+   titleHTML.innerHTML = `Title:<span class="done-todos">${element.title}</span>`;
+
+   const descriptionHTML = document.createElement('p');
+   descriptionHTML.id = 'description';
+   descriptionHTML.innerHTML = `Description:<span class="done-todos">${element.description}</span>`;
+
+   const dueDateHTML = document.createElement('p');
+   dueDateHTML.id = 'dueDate';
+   dueDateHTML.innerHTML = ` Due Date: <span class="done-todos">${element.dueDate}</span>`
+
+   const priorityHTML = document.createElement('p');
+   priorityHTML.id = 'priority';
+   priorityHTML.innerHTML = ` Priority: <span class="done-todos">${element.priority}</span>`;
+
+   const notesHTML = document.createElement('p');
+   notesHTML.id = 'notes';
+   notesHTML.innerHTML = ` Notes: <span class="done-todos">${element.notes}</span>`;
+
+
+   //APPENDING THE TAGS TO THE LIST
+   list.appendChild(titleHTML);
+   list.appendChild(descriptionHTML);
+   list.appendChild(dueDateHTML);
+   list.appendChild(priorityHTML);
+   list.appendChild(notesHTML);
+
 
              
   list.appendChild(completed);
