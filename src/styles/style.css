@@ -118,6 +118,7 @@ body{
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     list-style-type: none;
     gap: 10px;
+  
 
 }
 span{
@@ -185,8 +186,6 @@ input[type="text"]{
 
 #btn-close{
     padding: 10px;
-    font-weight: bold;
-    font-size: 1rem;
     border-radius: 5px;
     border: none;
     background-color: #d67229;
@@ -278,7 +277,12 @@ button:hover{
     /* color: lightblue; */
 }
 
-.strike .done-todos{
+.strike{
     text-decoration: line-through;
+   
+}
+
+p{
+    padding: 5px;
 }
 

@@ -5,6 +5,19 @@ const taskDueDate = document.querySelector('#dueDate');
 const taskPriority = document.getElementsByName('priority');
 const taskNotes = document.querySelector('#notes');
 
+//TODAY DATE
+const todayDate = document.getElementById('today-date');
+const today = document.getElementById('today');
+const date = new Date();
+
+const day = date.getDate();
+const month = date.getMonth() + 1;
+const year = date.getFullYear();
+
+const currentDate = `${day}/${month}/${year}`;
+todayDate.textContent =currentDate;
+today.textContent = currentDate;
+
 //PROJECT INPUT
 const projectTitle =document.querySelector('#project-title');
 

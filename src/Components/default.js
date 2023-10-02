@@ -1,7 +1,7 @@
 import { projectItems } from "../Layout/DOM";
 import { home, personal, work } from "../Layout/DOM";
 import { todos } from "./todos";
-import { formSubmit } from "../Modules/todoFormSubmit";
+import { formSubmit } from "../Modules/addTodo";
 import { myDefaultProjects } from "../Layout/DOM";
 
 
