@@ -184,7 +184,7 @@ const addTodos = () => {
 
     //creating the trash can to delete each todos
     const trashIcon = document.createElement("i");
-    trashIcon.className = "fa-solid fa-trash";
+    trashIcon.className = "fa-solid fa-trash-can";
     trashIcon.id = "trash";
 
    // //adding click to the trashIcon

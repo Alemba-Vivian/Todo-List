@@ -1,6 +1,6 @@
 :root{
     --header--backgroun-clr:#9e7bb5;
-    --sidebar--background-clr:#d67229 ;
+    --sidebar--background-clr:#F8F8FF;
     --main--background-clr:white;
  
   
@@ -49,6 +49,11 @@ body{
     padding-bottom: 30px;
     color: black;
 }
+.sidebar-content h3{
+    color: #d67229;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 .my-name{
     padding-bottom: 5px;
 }
@@ -61,16 +66,21 @@ body{
     align-items: center;
     justify-content: space-between;
     gap: 8px;
-    border: 1px solid black;
+    border: 1px solid lightgray;
     border-radius: 10px;
+    color: black;
    
+}
+.user-details h6{
+  color: gray;
 }
 .projects{
     padding-top: 40px;
     color: black;
 }
-#btn-new-project{padding: 10px 20px 10px 20px;
-    background-color: orange;
+#btn-new-project{
+    padding: 10px;
+    background-color: #d67229;
     color: white;
     border-radius: 5px;
     border: none;
@@ -91,10 +101,12 @@ body{
 #project>li{
     padding: 10px;
     list-style-type: none;
+    color: black;
+    font-weight: bold;
 }
 #project>li:hover{
     cursor: pointer;
-    background-color: orange;
+    background-color: #d67229;
 }
 
 .grid-colum-span{
@@ -111,6 +123,12 @@ body{
 .task-container{
     padding-top: 40px;
     padding-bottom: 20px;
+  
+}
+.todos-container{
+    padding: 50px;
+    background-color: #F8F8FF;
+    border-radius: 20px;
 }
 
 #todos{
@@ -246,19 +264,23 @@ button:hover{
 #edit{
     margin-left: 10px;
     padding-top: 20px;
+    font-weight: bold;
+    color: #d67229;
 }
 
 #trash{
-    color: red;
+    color: #d67229;
     margin-left: 10px;
     padding-top: 20px;
+    font-weight: bold;
  
     /* padding-left: 100px; */
 }
 #check{
     padding-top: 20px;
-    color: green;
+    color: #d67229;
     margin-left: 10px;
+    font-weight: bold;
   
     /* float: right; */
 
@@ -286,3 +308,14 @@ p{
     padding: 5px;
 }
 
+.fa-list-check, .fa-laptop , .fa-house{
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-right: 20px;
+    color: #d67229;
+}
+
+#priority{
+    color:green;
+    font-weight: bold;
+}
