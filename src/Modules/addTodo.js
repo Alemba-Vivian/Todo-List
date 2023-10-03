@@ -56,7 +56,7 @@ function displayPriority() {
   for (let i = 0; i < taskPriority.length; i++) {
     if (taskPriority[i].checked) {
       taskPriorityValue = taskPriority[i].value;
-      console.log((taskPriorityValue = taskPriority[i].value));
+      // console.log((taskPriorityValue = taskPriority[i].value));
     }
   }
 }
@@ -69,32 +69,51 @@ function displayPriority() {
 let myTodos = [];
 
 const acceptData = () => {
-  const task = todos();
-  displayPriority();
+  //  const task = todos();
+    displayPriority();
 
-  task.title = taskTitle.value;
-  task.description = taskDescription.value;
-  task.dueDate = taskDueDate.value;
-  task.priority = taskPriorityValue;
-  task.notes = taskNotes.value;
+    myTodos.push(
+    todos(
+      taskTitle.value,
+      taskDescription.value,
+      taskDueDate.value,
+      taskPriorityValue, 
+      taskNotes.value)
+    
+  )
+
+  // task.title = taskTitle.value;
+  // task.description = taskDescription.value;
+  // task.dueDate = taskDueDate.value;
+  // task.priority = taskPriorityValue;
+  // task.notes = taskNotes.value;
 
   //pushing my tasks/todos into the array
-  myTodos.push(task);
+  // myTodos.push(task);
   console.log( myTodos);
+
+  //storing my todos to the localstorage
+  localStorage.setItem("myTodos", JSON.stringify(myTodos));
+ 
+
   addTodos(); 
+
+
+ 
 };
 
 
 
 const addTodos = () => {
-
+    listItems.innerHTML ="";
   //looping through my todo lists
-  myTodos.forEach((element, index) => {
+   
+    myTodos.forEach((element, index) => {
     //clear the array once an object is pushed
-    myTodos = [];
-
-    const list = document.createElement("li");
-     // //CREATING P TAG FOR THE INPUTS RECEIVED FROM THE USER
+  
+    const list = document.createElement("li")
+    list.id = index;
+        // //CREATING P TAG FOR THE INPUTS RECEIVED FROM THE USER
     const titleHTML = document.createElement("p");
     titleHTML.id = "title";
     titleHTML.textContent = `${element.title}`;
@@ -152,7 +171,7 @@ const addTodos = () => {
 
     //adding eventlistener to the complete icon
       completeIcon.addEventListener("click", () => {
-      console.log("i am done");
+    
       // completed.style.display ='block';
       list.classList.toggle("strike");
     });
@@ -170,6 +189,14 @@ const addTodos = () => {
 
     trashIcon.addEventListener("click", () => {
       listItems.removeChild(list);
+      console.log(list.id);
+
+      //removing from the localstorage
+      myTodos.splice(list.id, 1);
+       //updating my todos in the localstorage
+     localStorage.setItem("myTodos", JSON.stringify(myTodos))
+
+      console.log(myTodos);
     });
 
  
@@ -186,15 +213,19 @@ const addTodos = () => {
     list.appendChild(trashIcon);
     listItems.appendChild(list);
 
-    console.log(list.appendChild(trashIcon));
-    console.log(listItems.appendChild(list));
 
-    return myTodos[list];
+    // return myTodos[list];
+    // console.log( myTodos);
    
-  });
+   
+  return myTodos[list];
+    
+})
 
   resetForm();
 
+  
+ 
   };
 
 const resetForm=()=>{
@@ -204,5 +235,13 @@ const resetForm=()=>{
  
 
 }
+
+//IIEF
+(()=>{
+  myTodos =JSON.parse(localStorage.getItem("myTodos"));
+  console.log(myTodos);
+  addTodos();
+
+})()
 
 export { taskPriorityValue, myTodos, validateTodos, formSubmit };
