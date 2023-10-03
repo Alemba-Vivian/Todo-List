@@ -69,37 +69,34 @@ function displayPriority() {
 let myTodos = [];
 
 const acceptData = () => {
-  //  const task = todos();
-    displayPriority();
-
-    myTodos.push(
-    todos(
-      taskTitle.value,
-      taskDescription.value,
-      taskDueDate.value,
-      taskPriorityValue, 
-      taskNotes.value)
+   const task = todos();
+ 
+  displayPriority();
+  //   myTodos.push(
+  //   todos(
+  //     taskTitle.value,
+  //     taskDescription.value,
+  //     taskDueDate.value,
+  //     taskPriorityValue, 
+  //     taskNotes.value)
     
-  )
+  // )
 
-  // task.title = taskTitle.value;
-  // task.description = taskDescription.value;
-  // task.dueDate = taskDueDate.value;
-  // task.priority = taskPriorityValue;
-  // task.notes = taskNotes.value;
+
+  task.title = taskTitle.value;
+  task.description = taskDescription.value;
+  task.dueDate = taskDueDate.value;
+  task.priority = taskPriorityValue;
+  task.notes = taskNotes.value;
 
   //pushing my tasks/todos into the array
-  // myTodos.push(task);
+  myTodos.push(task);
   console.log( myTodos);
 
   //storing my todos to the localstorage
   localStorage.setItem("myTodos", JSON.stringify(myTodos));
- 
 
   addTodos(); 
-
-
- 
 };
 
 
@@ -144,22 +141,27 @@ const addTodos = () => {
 
        //adding eventlistener to the edit con
 
-      editIcon.addEventListener("click", () => {
+      editIcon.addEventListener("click", (e) => {
 
       showForm();
 
       const selectedTodos = list;
+    
 
       taskTitle.value = selectedTodos.children[0].innerHTML;
       taskDescription.value = selectedTodos.children[1].innerHTML;
       taskDueDate.value = selectedTodos.children[2].innerHTML;
-      taskPriority.value = selectedTodos.children[3].innerHTML;
+      taskPriorityValue = selectedTodos.children[3].innerHTML;
       taskNotes.value = selectedTodos.children[4].innerHTML;
-      console.log((taskTitle.value = selectedTodos.children[0].innerHTML));
+    
 
-      selectedTodos.remove();
+       //updating my todos in the localstorage
+       localStorage.setItem("myTodos", JSON.stringify(myTodos));
+         //removing from the localstorage
+         myTodos.splice(selectedTodos.id, 1);
+      // selectedTodos.remove();
 
-
+      console.log(myTodos);
 
       });
 
@@ -232,8 +234,6 @@ const resetForm=()=>{
     taskTitle.value = "";
     taskDescription.value = "";
     taskDueDate.value = "";
- 
-
 }
 
 //IIEF
