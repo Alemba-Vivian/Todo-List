@@ -102,11 +102,12 @@ const acceptData = () => {
 
 
 const addTodos = () => {
-    listItems.innerHTML ="";
+    // listItems.innerHTML ="";
   //looping through my todo lists
    
     myTodos.forEach((element, index) => {
     //clear the array once an object is pushed
+    myTodos =[];
   
     const list = document.createElement("li")
     list.id = index;
@@ -238,7 +239,7 @@ const resetForm=()=>{
 
 //IIEF
 (()=>{
-  myTodos =JSON.parse(localStorage.getItem("myTodos"));
+  myTodos =JSON.parse(localStorage.getItem("myTodos")) || [];
   console.log(myTodos);
   addTodos();
 
